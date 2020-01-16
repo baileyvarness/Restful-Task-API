@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Index Page</h1>
+    <form action="/taskcreate" method="POST">
+        <h2>Enter a task</h2>
+        <div>
+          <label>Title</label>
+          <input type="text" name="title" />
+        </div>
+        <div>
+          <label>Description</label>
+          <input type="text" name="description" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (task of tasks) { %>
+          <tr>
+            <td><%= task.title %></td>
+            <td><%= task.description %></td>
+            <td><%= task.completed %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+</body>
+</html>
